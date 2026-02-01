@@ -10,9 +10,29 @@ import random
 import joblib
 import numpy as np
 import os
+import gdown
 
 # ----- FLASK APP -----
 app = Flask(__name__)
+# ----- GOOGLE DRIVE AUTO-DOWNLOAD -----
+MODEL_FILES = {
+    "models/model.pkl": "1hIshtrs1h2hJaYIq6d9KnbwfYicp0b_L",
+    "models/scaler.pkl": "1A5BURfupAXHtKtuiPI-8-vMMgztoVfKp",
+    "models/features.pkl": "1GPVWEWWrYqizQQbftckSA-9M6UvY7qx0",
+    "models/metrics.pkl": "1swxyvEIoHtSmAoMT-LggsIl4Z-OHETi4",
+    "models/cv_metrics.pkl": "14QsYScSGilAMXYBENdu_9MhYQUo8X84X",
+    "models/importance.pkl": "1DQOz8C_fkFBR6mnVFqk7Y9MSYE42z9l9",
+    "models/cities.pkl": "1ufuRRDJXKyhZ6QSF3vZVDvm4ONZcGjRf",
+}
+
+def ensure_models():
+    for path, file_id in MODEL_FILES.items():
+        if not os.path.exists(path):
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            url = f"https://drive.google.com/uc?id={file_id}"
+            print(f"⬇️ Downloading {path} from Google Drive...")
+            gdown.download(url, path, quiet=False)
+
 
 # ----- LOAD ML MODEL & ARTIFACTS -----
 MODEL_LOADED = False
@@ -25,29 +45,20 @@ importance = None
 cities_list = None
 
 def load_ml_model():
-    """Load the trained ML model and artifacts"""
     global MODEL_LOADED, model, scaler, feature_cols, metrics, cv_metrics, importance, cities_list
-    
     try:
-        # Check if model files exist
-        if all(os.path.exists(f) for f in ['model.pkl', 'scaler.pkl', 'features.pkl']):
-            model = joblib.load('model.pkl')
-            scaler = joblib.load('scaler.pkl')
-            feature_cols = joblib.load('features.pkl')
-            metrics = joblib.load('metrics.pkl')
-            cv_metrics = joblib.load('cv_metrics.pkl')
-            importance = joblib.load('importance.pkl')
-            cities_list = joblib.load('cities.pkl')
-            MODEL_LOADED = True
-            print("✅ ML Model loaded successfully!")
-            print(f"   Features: {feature_cols}")
-            print(f"   Test MAE: {metrics[0]:.1f}, R²: {metrics[1]:.3f}")
-            print(f"   CV R²: {cv_metrics['cv_r2']:.3f} ± {cv_metrics['cv_std']:.3f}")
-        else:
-            print("⚠️  Model files not found. Using fallback calculations.")
+        model = joblib.load("models/model.pkl")
+        scaler = joblib.load("models/scaler.pkl")
+        feature_cols = joblib.load("models/features.pkl")
+        metrics = joblib.load("models/metrics.pkl")
+        cv_metrics = joblib.load("models/cv_metrics.pkl")
+        importance = joblib.load("models/importance.pkl")
+        cities_list = joblib.load("models/cities.pkl")
+        MODEL_LOADED = True
+        print("✅ ML Model loaded successfully!")
     except Exception as e:
-        print(f"⚠️  Error loading model: {e}. Using fallback calculations.")
-
+        print(f"⚠️ Model load failed: {e}")
+        MODEL_LOADED = False
 # ----- HELPER FUNCTIONS -----
 def get_aqi_category(aqi):
     """Returns AQI category, color, and description"""
@@ -1436,7 +1447,8 @@ if __name__ == '__main__':
     print("\n" + "="*60)
     print("🌬️  AEROGUARD PRO - Integrated ML Dashboard")
     print("="*60)
-    
+
+    ensure_models()
     # Try to load ML model
     load_ml_model()
     
