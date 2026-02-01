@@ -1,0 +1,21 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+
+# ML model files
+*.pkl
+*.joblib
+
+# Datasets
+*.csv
+
+# Media
+*.mp4
+
+# macOS
+.DS_Store
+
