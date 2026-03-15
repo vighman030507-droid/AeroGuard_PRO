@@ -552,8 +552,8 @@ in the Software without restriction...
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
+- GitHub: [@vighman030506-droid](https://github.com/vighman030507-droid)
+- LinkedIn: [Vighnesh Singh](https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/vighnesh-singh-61a860394/))
 - Email: your.email@example.com
 
 ---
@@ -648,9 +648,9 @@ Having issues? Here's how to get help:
 
 Give a ⭐️ if this project helped you!
 
-[![Star on GitHub](https://img.shields.io/github/stars/yourusername/aeroguard-pro?style=social)](https://github.com/yourusername/aeroguard-pro)
-[![Fork on GitHub](https://img.shields.io/github/forks/yourusername/aeroguard-pro?style=social)](https://github.com/yourusername/aeroguard-pro/fork)
-[![Watch on GitHub](https://img.shields.io/github/watchers/yourusername/aeroguard-pro?style=social)](https://github.com/yourusername/aeroguard-pro)
+[![Star on GitHub](https://img.shields.io/github/stars/vighman030507-droid/aeroguard-pro?style=social)](https://github.com/vighman030507-droid/aeroguard-pro)
+[![Fork on GitHub](https://img.shields.io/github/forks/vighman030507-droid/aeroguard-pro?style=social)](https://github.com/vighman030507-droid/aeroguard-pro/fork)
+[![Watch on GitHub](https://img.shields.io/github/watchers/vighman030507-droid/aeroguard-pro?style=social)](https://github.com/vighman030507-droid/aeroguard-pro)
 
 ---
 
