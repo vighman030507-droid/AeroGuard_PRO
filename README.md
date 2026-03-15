@@ -553,7 +553,7 @@ in the Software without restriction...
 
 **Your Name**
 - GitHub: [@vighman030506-droid](https://github.com/vighman030507-droid)
-- LinkedIn: [Vighnesh Singh](https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/vighnesh-singh-61a860394/))
+- LinkedIn: [Vighnesh Singh](https://www.linkedin.com/in/vighnesh-singh-61a860394/)
 - Email: your.email@example.com
 
 ---
@@ -640,7 +640,7 @@ Having issues? Here's how to get help:
 1. **Check Documentation**: Review this README and guides
 2. **Search Issues**: Look for similar problems in Issues tab
 3. **Create Issue**: Open a new issue with details
-4. **Contact**: Email at support@aeroguard.example.com
+4. **Contact**: Email at vighman030507@gmail.com
 
 ---
 
